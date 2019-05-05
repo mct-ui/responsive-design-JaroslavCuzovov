@@ -230,6 +230,10 @@ a:focus {
     flex-direction: column;
 }
 
+.o-row--gray-bg {
+    background-color: #F7F7F7;
+}
+
 /* size modifiers */
 
 .o-row--lg {
