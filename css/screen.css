@@ -423,6 +423,17 @@ a:focus {
     Small cta link with custom animation
 */
 
+.c-title {
+    display: flex;
+    align-items: flex-start;
+}
+
+.c-title-icon {
+    width: 12%;
+    padding-top: 1%;
+    margin-right: 1%;
+}
+
 .c-link-cta {
     position: relative;
     display: inline-block;
@@ -573,6 +584,68 @@ a:focus {
         display: block;
     }
 }
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+/* Mobile */
+.c-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-footer__logo {
+    width: 100%;
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .c-footer {
+        justify-content: center;
+    }
+
+    .c-footer__logo {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .c-footer__nav {
+        width: auto;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .c-footer {
+        justify-content: space-between;
+    }
+
+    .c-footer__logo {
+        /*
+            Explanation:
+            justify-content (space-between) makes the centering
+            of the logo fail. This gets circumvented by setting
+            top left edge to absolute 50% 50% of the original box.
+
+            Then we use the transform to move the logo back to the
+            origin.
+        */
+        width: auto; /* to make link bounding box correspond. Otherwise mouseover fails on parts of the links because logo box covers them all. */
+        position: absolute; /* to center it out */
+        top: 50%; /* 50% of the container */
+        left: 50%;  /* 50% of the container */
+        transform: translate(-50%, -50%);  /* move back to origin */
+    }
+}
+
 
 
 /*
